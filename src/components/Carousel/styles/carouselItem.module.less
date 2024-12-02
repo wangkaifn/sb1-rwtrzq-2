@@ -1,0 +1,23 @@
+@import '../../../styles/variables.less';
+
+.item {
+  flex: 0 0 @item-width;
+  transition: transform @transition-duration;
+
+  &Content {
+    background: white;
+    border-radius: @border-radius;
+    box-shadow: 0 4px 6px @shadow-color;
+    padding: 24px;
+    height: 192px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-size: @item-text-size;
+      font-weight: bold;
+      color: @text-color;
+    }
+  }
+}

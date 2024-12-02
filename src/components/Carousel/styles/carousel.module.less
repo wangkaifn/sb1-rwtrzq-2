@@ -1,0 +1,56 @@
+@import '../../../styles/variables.less';
+
+.carousel {
+  position: relative;
+  margin: 0 -@container-padding;
+  padding: 0 @container-padding;
+
+  &Container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 16px;
+    padding: 16px 0;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: @button-size;
+  height: @button-size;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px @shadow-color;
+  cursor: pointer;
+  transition: all @transition-duration;
+
+  &:hover:not(:disabled) {
+    background-color: @hover-bg;
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.left {
+    left: 8px;
+  }
+
+  &.right {
+    right: 8px;
+  }
+}
